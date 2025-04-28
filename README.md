@@ -6,7 +6,7 @@
 
 ---
 
-## System Diagram
+## System Diagram  
 
 ![Flight Delay Notification Bot Diagram](flight-delay-notification-diagram.png)
 
