@@ -1,0 +1,122 @@
+{
+  "name": "Flight Delay Notification Bot",
+  "nodes": [
+    {
+      "name": "Receive Flight Number",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "notes": "Receives incoming flight number from webhook."
+    },
+    {
+      "name": "Check Flight Status (Mock API)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ],
+      "notes": "Calls a dummy API to fetch flight status."
+    },
+    {
+      "name": "Flight Delayed? (If Check)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        750,
+        300
+      ],
+      "notes": "Checks if flight is delayed."
+    },
+    {
+      "name": "Send Delay Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        250
+      ],
+      "notes": "Simulates sending a delay notification."
+    },
+    {
+      "name": "Log Notification Sent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1250,
+        250
+      ],
+      "notes": "Logs that a delay notification was sent."
+    },
+    {
+      "name": "Log Flight OK",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        450
+      ],
+      "notes": "Logs that the flight is on time."
+    }
+  ],
+  "connections": {
+    "Receive Flight Number": {
+      "main": [
+        [
+          {
+            "node": "Check Flight Status (Mock API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Flight Status (Mock API)": {
+      "main": [
+        [
+          {
+            "node": "Flight Delayed? (If Check)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flight Delayed? (If Check)": {
+      "main": [
+        [
+          {
+            "node": "Send Delay Notification",
+            "type": "main",
+            "index": 0,
+            "conditions": {
+              "true": []
+            }
+          },
+          {
+            "node": "Log Flight OK",
+            "type": "main",
+            "index": 0,
+            "conditions": {
+              "false": []
+            }
+          }
+        ]
+      ]
+    },
+    "Send Delay Notification": {
+      "main": [
+        [
+          {
+            "node": "Log Notification Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
