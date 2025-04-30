@@ -35,10 +35,15 @@
 
 ---
 
+---
+
 ## Future Work
-- Integrate with live flight tracking APIs (e.g., AviationStack, FlightAware)
-- Add customer-specific notification personalization
-- Deploy automated schedule re-routing for impacted transfers
+
+- Integrate a live flight status API (e.g., AviationStack or FlightAware)
+- Add airline-specific delay reason parsing
+- Include multi-channel notification (SMS, WhatsApp, email)
+- Track customer acknowledgment and log response feedback
+
 
 ---
 *Demo built for AI Agent Implementation Manager portfolio presentation.*
