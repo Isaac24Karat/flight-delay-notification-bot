@@ -1,5 +1,12 @@
 # Flight Delay Notification Bot (n8n Workflow)
 
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Built With](https://img.shields.io/badge/built%20with-n8n%20%7C%20Flight%20API%20%7C%20Twilio-blue)
+![Use Case](https://img.shields.io/badge/usecase-Real%20Time%20Alerts-orange)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Last Update](https://img.shields.io/github/last-commit/Isaac24Karat/flight-delay-notification-bot)
+
+
 > **Project Pitch:**  
 > I built a lightweight n8n workflow that monitors flight statuses and automatically sends notifications if a delay is detected.  
 > This helps travel service providers proactively manage pick-up schedules, customer communications, and operational efficiency.
