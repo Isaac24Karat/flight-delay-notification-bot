@@ -41,6 +41,10 @@
 - **flight-delay-notification-diagram.png** — System flow diagram
 
 ---
+## 🔔 Alert Flow Summary
+- Listen to flight status API
+- If delay > X mins, send primary alert
+- If user doesn’t open email in 10 mins → send SMS fallback
 
 ---
 
