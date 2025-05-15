@@ -25,6 +25,15 @@
 - If a delay is detected, sends a notification (via email, SMS, or dashboard alert)
 - Logs the notification status for tracking and reporting
 
+## 📦 Alert Fallback Flow
+
+The system now supports multi-channel fallback if the email alert fails.
+
+- Step 1: Primary delay alert sent via email
+- Step 2: If not opened within 15 minutes → fallback to SMS
+- Step 3: Prevents double-send via incident lock key
+
+
 ---
 
 ## Technologies Used
